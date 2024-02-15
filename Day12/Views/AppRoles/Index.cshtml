@@ -1,0 +1,155 @@
+﻿@* @using Microsoft.AspNetCore.Identity
+@model IEnumerable<IdentityRole>
+
+@{
+    ViewData["Title"] = "Application Roles";
+}
+
+<h1>View Roles</h1>
+<p>
+    <a asp-action="Create">Create Role</a>
+</p>
+
+<table class="table">
+<thead>
+<tr>
+    <th>@Html.DisplayNameFor(model => model.Id)</th>
+
+    <th>@Html.DisplayNameFor(model => model.Name)</th>
+
+    <th></th>
+</tr>
+</thead>
+<tbody>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@Html.DisplayFor(modelItem=>item.Id)</td>
+        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+    </tr>
+}
+</tbody>
+<table/> *@
+
+
+
+@using Microsoft.AspNetCore.Identity
+@model IEnumerable<IdentityRole>
+
+@{
+    ViewData["Title"] = "Application Roles";
+}
+
+
+@* <p>
+     <a asp-action="Create">Create Role</a>
+    <a asp-action="Create" class="btn btn-primary">Create Role</a>
+</p> *@
+<hr/>
+<div class="card-body text-center bg-white"><h1>Available Roles List</h1></div> <hr/>
+<div class="row justify-content-center">
+    <div class="col-md-6 mt-5">
+        <div class="card shadow border-secondary">
+            <div class="card-body ">
+                <h4>Role Details</h4><hr/>
+                @* <div class="justify-content-center">View Roles</div> *@
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Id)</th>
+                        <th>@Html.DisplayNameFor(model => model.Name)</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(item.Id))
+                                    {
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    }
+                                    else
+                                    {
+                                        @:Not Available
+                                    }
+                                </td>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(item.Name))
+                                    {
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    }
+                                    else
+                                    {
+                                        @:Not Available
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3">No roles available</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+                @* < div class="col-md-6 mt-3 text-center" > *@
+                <a asp-action="Create" class="btn btn-success">Create Role</a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
+@* <table class="table">
+    <thead>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Id)</th>
+        <th>@Html.DisplayNameFor(model => model.Name)</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.Id))
+                    {
+                        @Html.DisplayFor(modelItem => item.Id)
+                    }
+                    else
+                    {
+                        @:Not Available
+                    }
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.Name))
+                    {
+                        @Html.DisplayFor(modelItem => item.Name)
+                    }
+                    else
+                    {
+                        @:Not Available
+                    }
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="3">No roles available</td>
+        </tr>
+    }
+    </tbody>
+</table>
+ *@

@@ -1,0 +1,32 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/*body {
+    margin-bottom: 60px;
+    background-image: url("~/img1.jpg");
+    background-size: cover;
+}*/
+
+.row{
+
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    background-image: linear-gradient(79deg, #c9d7da, #f1e7e7 48%,#f7c1c1 );
+}
+
